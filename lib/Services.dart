@@ -39,7 +39,7 @@ class Services {
   }
 
 
-  static Future<bool> addProduct(String firstName, String lastName) async {
+  static Future<bool> addProduct(String nombre, String cantidad) async {
     try {
       var map = Map<String, dynamic>();
       map['action'] = _ADD_EMP_ACTION;
