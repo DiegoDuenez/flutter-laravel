@@ -43,8 +43,8 @@ class Services {
     try {
       var map = Map<String, dynamic>();
       map['action'] = _ADD_EMP_ACTION;
-      map['first_name'] = firstName;
-      map['last_name'] = lastName;
+      map['nombre'] = nombre;
+      map['cantidad'] = cantidad;
       final response = await http.post(Uri.parse(ROOT), body: map);
       print('addProduct Response: ${response.body}');
       if (200 == response.statusCode) {
