@@ -46,10 +46,10 @@ class DataTableDemoState extends State<DataTableDemo> {
         _lastNameController.text
             .trim()
             .isEmpty) {
-      print("Empty fields");
+      print("Campos vacios");
       return;
     }
-    _showProgress('Adding Product...');
+    _showProgress('Agregando Producto...');
     Services.addProduct(_firstNameController.text, _lastNameController.text)
         .then((result) {
       if (result) {
@@ -60,7 +60,7 @@ class DataTableDemoState extends State<DataTableDemo> {
   }
 
   _getProducts() {
-    _showProgress('Loading Products...');
+    _showProgress('Cargando Productos...');
     Services.getProducts().then((products) {
       setState(() {
         _products = products;
@@ -71,7 +71,7 @@ class DataTableDemoState extends State<DataTableDemo> {
   }
 
   _deleteProduct(Product product) {
-    _showProgress('Deleting Product...');
+    _showProgress('Eliminando Producto...');
     Services.deleteProduct(product.id).then((result) {
       if (result) {
         setState(() {
@@ -83,7 +83,7 @@ class DataTableDemoState extends State<DataTableDemo> {
   }
 
   _updateProduct(Product product) {
-    _showProgress('Updating Product...');
+    _showProgress('Actualizando Producto...');
     Services.updateProduct(
         product.id, _firstNameController.text, _lastNameController.text)
         .then((result) {
@@ -121,27 +121,27 @@ class DataTableDemoState extends State<DataTableDemo> {
           headingRowColor: MaterialStateColor.resolveWith((states) => Colors.white),
           dataRowColor: MaterialStateColor.resolveWith((Set<MaterialState> states) => states.contains(MaterialState.selected)
               ? Colors.white
-              : Colors.black
+              : Colors.white
           ),
           columns: [
             DataColumn(
                 label: Text("ID"),
                 numeric: false,
-                tooltip: "This is the product id"),
+                tooltip: "Id"),
             DataColumn(
                 label: Text(
                   "NOMBRE",
                 ),
                 numeric: false,
-                tooltip: "This is the last name"),
+                tooltip: "Nombre"),
             DataColumn(
                 label: Text("CANTIDAD"),
                 numeric: false,
-                tooltip: "This is the last name"),
+                tooltip: "Cantidad"),
             DataColumn(
                 label: Text("ELIMINAR"),
                 numeric: false,
-                tooltip: "Delete Action"),
+                tooltip: "Eliminar"),
           ],
           rows: _products.map(
                 (product) =>
