@@ -244,13 +244,13 @@ class DataTableDemoState extends State<DataTableDemo> {
                 ? Row(
               children: <Widget>[
                 OutlinedButton(
-                  child: Text('UPDATE'),
+                  child: Text('Actualizar'),
                   onPressed: () {
                     _updateProduct(_selectedProduct);
                   },
                 ),
                 OutlinedButton(
-                  child: Text('CANCEL'),
+                  child: Text('Cancelar'),
                   onPressed: () {
                     setState(() {
                       _isUpdating = false;
